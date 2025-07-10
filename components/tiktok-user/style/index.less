@@ -1,0 +1,77 @@
+@import "../../style/themes/default";
+@import "../../style/mixins/index";
+
+@tiktok-user-prefix-cls: ~"@{ant-prefix}-tiktok-user";
+
+.@{tiktok-user-prefix-cls} {
+  .reset-component;
+  display: inline-flex;
+  align-items: center;
+  font-size: @font-size-base;
+  line-height: @line-height-base;
+  color: @text-color;
+  cursor: default;
+  transition: all @animation-duration-base @ease-out;
+  padding: @padding-xs * 0.5 @padding-xs;
+  border-radius: @border-radius-base;
+
+  &-icon {
+    margin-right: 4px;
+    color: @text-color-secondary;
+  }
+
+  &-username {
+    font-weight: 500;
+  }
+
+  &-verified-badge {
+    margin-left: 4px;
+    color: @success-color;
+  }
+
+  &-clickable {
+    cursor: pointer;
+    
+    &:hover {
+      background-color: @primary-1;
+      color: @primary-color;
+      
+      .@{tiktok-user-prefix-cls}-icon {
+        color: @primary-color;
+      }
+    }
+
+    &:active {
+      background-color: @primary-2;
+    }
+
+    &:focus {
+      outline: 0;
+      box-shadow: @input-outline-offset @outline-blur-size @outline-width @primary-color;
+    }
+  }
+
+  &-loading {
+    .@{tiktok-user-prefix-cls}-icon {
+      color: @primary-color;
+    }
+  }
+
+  &-small {
+    font-size: @font-size-sm;
+    padding: @padding-xs * 0.25 @padding-xs * 0.5;
+    
+    .@{tiktok-user-prefix-cls}-icon {
+      font-size: @font-size-sm;
+    }
+  }
+
+  &-large {
+    font-size: @font-size-lg;
+    padding: @padding-xs @padding-sm;
+    
+    .@{tiktok-user-prefix-cls}-icon {
+      font-size: @font-size-lg;
+    }
+  }
+}
